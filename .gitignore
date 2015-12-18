@@ -45,3 +45,18 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+#Java ignore
+.settings
+.project
+.classpath
+dist
+
+#Grunt ignore
+**/bower_components
+.tern-project
+.sass-cache
+bower_components
+**/**/node_modules
+**/**/target
+**/**/*.db

@@ -1,0 +1,48 @@
+[4mRunning "loadconst" task[24m
+
+[4mRunning "clean:build" (clean) task[24m
+[32m>> [39m1 path cleaned.
+
+[4mRunning "concat:vendor" (concat) task[24m
+File dist/main/js/vendor.js created.
+
+[4mRunning "copy:resources" (copy) task[24m
+Created 5 directories, copied 2 files
+
+[4mRunning "htmlmin:build" (htmlmin) task[24m
+Minified 1 files
+
+[4mRunning "loadconst" task[24m
+
+[4mRunning "sass:build" (sass) task[24m
+
+[4mRunning "cssmin:target" (cssmin) task[24m
+[32m>> [39m1 file created. 1.86 kB → 1.13 kB
+
+[4mRunning "loadconst" task[24m
+
+[4mRunning "csslint:all" (csslint) task[24m
+[32m>> [39m0 files lint free.
+
+[4mRunning "copy:css" (copy) task[24m
+
+
+[4mRunning "cssmin:target" (cssmin) task[24m
+[32m>> [39m1 file created. 2.99 kB → 1.14 kB
+
+[4mRunning "loadconst" task[24m
+
+[4mRunning "jshint:all" (jshint) task[24m
+[32m>> [39m3 files lint free.
+
+[4mRunning "concat:js" (concat) task[24m
+File dist/main/js/app.js created.
+
+[4mRunning "uglify:dist" (uglify) task[24m
+[32m>> [39m1 file created.
+
+[4mRunning "connect:server" (connect) task[24m
+Started connect web server on http://0.0.0.0:9001
+
+[4mRunning "watch" task[24m
+Waiting...

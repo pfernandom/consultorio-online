@@ -1,0 +1,70 @@
+<div class="row medical-history">
+	<div class="title"> Antecedente Personales Patológicos</div>
+	
+	 <tabset justified="true" data-ng-if="!ctrl.mobile">
+		<tab heading="Antecedentes alérgicos">
+			<ul class="list">
+				<li data-ng-repeat="alergies in ctrl.medicalHistory.alergies" data-ng-bind="alergies"></li>
+			</ul>
+		</tab>
+		<tab heading="Enfermedades de la infancia">
+			<ul class="list">
+				<li data-ng-repeat="childhood in ctrl.medicalHistory.childhood" data-ng-bind="childhood"></li>
+			</ul>
+		</tab>
+		<tab heading="Enfermedades médicas">
+			<ul class="list">
+				<li data-ng-repeat="medical in ctrl.medicalHistory.medical" data-ng-bind="medical"></li>
+			</ul>
+		</tab>
+		<tab heading="Antecedentes quirúrgicos o traumáticos">
+			<ul class="list">
+				<li data-ng-repeat="quirugical in ctrl.medicalHistory.quirugical" data-ng-bind="quirugical"></li>
+			</ul>
+		</tab>
+	  </tabset>
+	  
+
+	  
+	  <accordion close-others="oneAtATime" data-ng-if="ctrl.mobile">
+		<accordion-group is-open="ctrl.status.alergies">
+		  <accordion-heading>
+			Antecedentes alérgicos<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': ctrl.status.medical, 'glyphicon-chevron-right': !ctrl.status.medical}"></i>
+		  </accordion-heading>
+			<ul>
+				<li data-ng-repeat="alergies in ctrl.medicalHistory.alergies" data-ng-bind="alergies"></li>
+			</ul>
+		</accordion-group>
+	  
+		<accordion-group is-open="ctrl.status.childhood">
+		  <accordion-heading>
+			Enfermedades de la infancia<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': ctrl.status.childhood, 'glyphicon-chevron-right': !ctrl.status.childhood}"></i>
+		  </accordion-heading>
+			<ul>
+				<li data-ng-repeat="childhood in ctrl.medicalHistory.childhood" data-ng-bind="childhood"></li>
+			</ul>
+		</accordion-group>
+		<accordion-group is-open="ctrl.status.medical">
+		  <accordion-heading>
+			Enfermedades médicas<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': ctrl.status.medical, 'glyphicon-chevron-right': !ctrl.status.medical}"></i>
+		  </accordion-heading>
+			<ul>
+				<li data-ng-repeat="medical in ctrl.medicalHistory.medical" data-ng-bind="medical"></li>
+			</ul>
+		</accordion-group>
+		
+		<accordion-group is-open="ctrl.status.quirugical">
+		  <accordion-heading>
+			Antecedentes quirúrgicos o traumáticos<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': ctrl.status.quirugical, 'glyphicon-chevron-right': !ctrl.status.quirugical}"></i>
+		  </accordion-heading>
+			<ul>
+				<li data-ng-repeat="quirugical in ctrl.medicalHistory.quirugical" data-ng-bind="quirugical"></li>
+			</ul>
+		</accordion-group>
+	  </accordion>
+	  </accordion>
+	  
+	  
+	  
+	  
+</div>

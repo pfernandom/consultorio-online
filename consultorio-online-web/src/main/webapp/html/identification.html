@@ -1,0 +1,19 @@
+<div class="id-card">
+	<div class="row photo">
+		<img data-ng-src="{{ctrl.person.photoUrl}}" alt="Photo"/>
+	</div>
+	<div class="row row2">
+		<table class="personal-info">
+			<tr>
+				<td class="title">Nombre:</td><td data-ng-bind="ctrl.person.name"></td>
+			</tr>
+			<tr>
+				<td class="title">Apellido:</td><td data-ng-bind="ctrl.person.lastName"></td>
+			</tr>
+			<tr>
+				<td class="title">Fecha de Nacimiento</td><td data-ng-bind="ctrl.person.dob">19 de Junio 1988</td>
+			</tr>
+		</table>
+
+	</div>
+</div>

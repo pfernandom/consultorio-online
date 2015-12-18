@@ -1,0 +1,46 @@
+<div class="appointments">
+	<div class="next">
+		<div class="title">
+		Próxima Cita:
+		</div>
+		<div data-ng-if="ctrl.today" class="alert alert-danger" >
+		  Hoy 
+		</div>
+		<div data-ng-if="ctrl.tomorrow" class="alert alert-warning" >
+		  Manana
+		</div>
+		<div class="date">
+			{{ctrl.person.appointments.next.date | date:'dd/MM/yyyy'}}
+			<strong>
+			{{ctrl.person.appointments.next.date | date:'@ h:mma'}}
+			</strong>
+		</div>
+	</div>
+	<div class="previous">
+		<div class="title">
+			Última Cita:
+		</div>
+		<div class="date">
+			{{ctrl.person.appointments.previous.date | date:'dd/MM/yyyy @ h:mma'}}
+		</div>
+		<ul>
+			<li>
+				Último Diagnóstico: {{ctrl.previousDiagnostic.description}}
+			</li>
+			<li>
+				Receta No.: {{ctrl.previousDiagnostic.prescription.number}}
+			</li>
+			<li>
+				Medicamentos: 
+			</li>
+			<li>
+				<ul>
+					<li data-ng-repeat="drug in ctrl.previousDiagnostic.prescription.drugs">
+						{{drug.name}}:{{drug.quantity}}
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	
+</div>
