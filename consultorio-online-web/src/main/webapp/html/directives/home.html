@@ -1,0 +1,14 @@
+		<div class="leftColumn" >
+			<id-card></id-card>
+		</div>
+		<div class="rightColumn" >
+			<id-appointments></id-appointments>
+			<medical-history></medical-history>
+			<family-history></family-history>
+			
+			<div ng-controller="MainCtrl as vm">
+			<formly-form model="vm.user" fields="vm.userFields">
+			  <button type="submit" class="btn btn-default" ng-click="vm.submit(vm.user)">Submit</button>
+			</formly-form>
+			</div>
+		</div>

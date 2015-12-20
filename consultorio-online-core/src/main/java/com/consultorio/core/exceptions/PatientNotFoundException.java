@@ -1,4 +1,4 @@
-package com.consultorio.webapp.rest.exception;
+package com.consultorio.core.exceptions;
 
 public class PatientNotFoundException extends RuntimeException {
 

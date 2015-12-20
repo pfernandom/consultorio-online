@@ -1,0 +1,21 @@
+
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Last Appointment</th>
+			<th>Next Appointment</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="user in ctrl.users" ui-sref="patientDetail">
+			<td>{{user.firstName}} {{user.lastName}}</td>
+			<td></td>
+			<td></td>
+		</tr>
+	</tbody>
+</table>
+
+<a  ui-sref="newPatient">
+<button type="submit" class="btn btn-default" >Create User</button>
+</a>

@@ -3,7 +3,9 @@ module.exports = function(grunt) {
                 'bower_components/jquery/dist/jquery.js',
 				'bower_components/jquery-ui/jquery-ui.js',
 				'bower_components/api-check/dist/api-check.js',
+				'bower_components/bootstrap/dist/js/bootstrap.js',
                 'bower_components/angular/angular.js',
+                'bower_components/angular-ui-router/release/angular-ui-router.js',
 				'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
 				'bower_components/angular-formly/dist/formly.js',
 				'bower_components/angular-formly-templates-bootstrap/dist/angular-formly-templates-bootstrap.js'

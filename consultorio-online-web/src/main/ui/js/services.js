@@ -1,7 +1,11 @@
 var app = angular.module('main');
 
-app.service('PersonService',function(){
+app.service('PatientService',['$http',function($http){
 	return{
+		getPromiseAllPatients:function(handler,errorHandler){
+			  var responsePromise = $http.get("users.json");
+              return responsePromise;
+		},
 		getPerson:function(){
 			return {
 				name:'Jane',
@@ -36,7 +40,7 @@ app.service('PersonService',function(){
 			};
 		}
 	};
-});
+}]);
 
 
 app.service('UserService',function(){

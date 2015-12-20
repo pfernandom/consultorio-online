@@ -1,4 +1,29 @@
-var app = angular.module('main',['ui.bootstrap','formly', 'formlyBootstrap']);
+var app = angular.module('main',['ui.bootstrap','formly', 'formlyBootstrap','ui.router']);
+
+app.config(function($stateProvider, $urlRouterProvider) {
+  //
+  // For any unmatched url, redirect to /state1
+  $urlRouterProvider.otherwise("/");
+  //
+  // Now set up the states 
+  $stateProvider
+    .state('home', {
+    	url: "/",
+    	templateUrl: "html/home.html"
+    })
+    .state('patients', {
+        url: "/patient",
+        template: "<h2>Patient list</h2><patient-list></patient-list>"
+     })
+     .state('newPatient', {
+        url: "/patient/create",
+        template: "<patient-form></patient-form>"
+     })
+     .state('patientDetail', {
+        url: "/patient/detail",
+        templateUrl: "html/patientDetail.html"
+     });
+});
 
 app.controller('MainCtrl',function(){
 	 var vm = this;
@@ -25,15 +50,6 @@ app.controller('MainCtrl',function(){
         type: 'password',
         label: 'Password',
         placeholder: 'Password'
-      }
-    },
-    {
-      key: 'file',
-      type: 'file',
-      templateOptions: {
-        label: 'File input',
-        description: 'Example block-level help text here',
-        url: 'https://example.com/upload'
       }
     },
     {

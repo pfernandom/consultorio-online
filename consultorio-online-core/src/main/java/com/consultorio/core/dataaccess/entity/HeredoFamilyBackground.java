@@ -3,8 +3,10 @@ package com.consultorio.core.dataaccess.entity;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -26,7 +28,7 @@ public class HeredoFamilyBackground {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-	@OneToMany
+	@OneToMany(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinTable( name="disease_familybackground",
             joinColumns = @JoinColumn( name="family_background_id"),
             inverseJoinColumns = @JoinColumn( name="disease_id"))

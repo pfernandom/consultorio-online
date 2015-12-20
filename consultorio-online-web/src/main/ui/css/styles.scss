@@ -30,14 +30,16 @@ body{
 	font-family:Arial, Helvetica, sans-serif;
 }
 
+html, body { height: 100%; min-height: 100%; }
+
+
 .navigation{
-	//@include centered(80%);
-	//@include bordered($border-color);
 	background-color:$header-background-color;
-	min-height:100px;
+	height: auto; 
+	min-height: 12%; 
+	
 	max-width: 100%;
 	width:100vw;
-	margin-bottom:10px;
 	color:$header-font-color;
 	@include shadow(0px, 1px, 10px, #888888);
 	.nav-content{
@@ -48,17 +50,21 @@ body{
 			float:right;
 			
 		}
+		.navbar{
+			margin-bottom:0px;
+		}
 		
 	}
 }
 
 .header{
-	@include centered(80%);
+	@include centered(100%);
 	height:60px;
 	box-sizing: border-box;
 	border-radius: $border-radius;
 	@include bordered($border-color);
 	padding-bottom:10px;
+	margin-top:10px;
 	*{
 		padding:10px;
 		box-sizing: border-box;
@@ -177,7 +183,8 @@ body{
 
 .content{
 	@include centered(80%);
-	height:auto;
+	height: auto; 
+	min-height: 88%; 
 	display: inline-block;
 	
 
@@ -256,16 +263,13 @@ body{
 
 .footer{
 	background-color:$header-background-color;
-	min-height:100px;
-	max-width: 100%;
-	width:100vw;
-	margin-top:10px;
-	color:$header-font-color;
-	
-	position:relative;
-	left:0px;
-	bottom:0px;
-	
+	clear: both;
+    position: relative;
+    z-index: 10;
+    height: 3em;
+    margin-top: -3em;
+    
+    color:$header-font-color;
 
 	@include shadow(0px, -1px, 10px, #888888);
 	.footer-content{
@@ -275,12 +279,18 @@ body{
 }
 
 @media screen and (max-width: $phone-width) {
+
 	.navigation{
-		min-height:60px;
 		.nav-content{
-			font-size:1em;		
+			.controls{
+				display:none;
+			}
+			.navbar{
+				margin-bottom:0px;
+			}
 		}
 	}
+		
 	
 	.header{
 
@@ -361,9 +371,18 @@ body{
 			}
 		}
 	}
-	
+
 	.footer{
-		min-height:60px;
+		
 	}
 	
+}
+
+
+table.table-hover{
+	tbody{
+		tr{
+			cursor:pointer;
+		}
+	}
 }

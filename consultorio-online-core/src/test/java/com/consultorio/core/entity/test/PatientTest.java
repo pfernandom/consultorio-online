@@ -4,6 +4,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 
+import java.lang.reflect.Field;
+import java.util.Arrays;
 import java.util.List;
 
 import org.junit.After;
@@ -25,7 +27,7 @@ import com.consultorio.core.dataaccess.repo.DiseaseRepository;
 import com.consultorio.core.dataaccess.repo.PatientRepository;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("/app-context.xml")
+@ContextConfiguration("/app-main-context.xml")
 @ActiveProfiles("application")
 public class PatientTest {
 	//
@@ -69,11 +71,11 @@ public class PatientTest {
 	public void testIsServiceUp() {
 		assertEquals(0,patientRepo.count());
 	}
-	
+
 	@Test
 	public void testSavePatient() {
 		Patient patient = new Patient();
-		patient.setName("Pedro");
+		patient.setFirstName("Pedro");
 		patient.setGender(Gender.MALE);
 		patient.setAddress(address);
 		
@@ -94,7 +96,7 @@ public class PatientTest {
 	@Test
 	public void testGetPatientsByAddress() {
 		Patient patient = new Patient();
-		patient.setName("Pedro");
+		patient.setFirstName("Pedro");
 		patient.setAddress(address);
 		
 		patientRepo.save(patient);
@@ -110,7 +112,7 @@ public class PatientTest {
 		assertFalse(patients.isEmpty());
 		Patient foundPatient =patients.get(0);
 		
-		assertEquals(patient.getName(),foundPatient.getName());
+		assertEquals(patient.getFirstName(),foundPatient.getFirstName());
 	}
 	
 	

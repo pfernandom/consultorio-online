@@ -30,8 +30,14 @@ public class Patient extends BaseEntity {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
-	@Column(name = "name", length = 500)
-	private String name;
+	@Column(name = "firstName", length = 500)
+	private String firstName;
+	
+	@Column(name = "middleName", length = 500)
+	private String middleName;
+	
+	@Column(name = "lastName", length = 500)
+	private String lastName;
 
 	@Enumerated(EnumType.STRING)
 	private Gender gender;
@@ -85,19 +91,47 @@ public class Patient extends BaseEntity {
 		this.id = id;
 	}
 
+	
 	/**
-	 * @return the name
+	 * @return the firstName
 	 */
-	public String getName() {
-		return name;
+	public String getFirstName() {
+		return firstName;
 	}
 
 	/**
-	 * @param name
-	 *            the name to set
+	 * @param firstName the firstName to set
 	 */
-	public void setName(String name) {
-		this.name = name;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	/**
+	 * @return the middleName
+	 */
+	public String getMiddleName() {
+		return middleName;
+	}
+
+	/**
+	 * @param middleName the middleName to set
+	 */
+	public void setMiddleName(String middleName) {
+		this.middleName = middleName;
+	}
+
+	/**
+	 * @return the lastName
+	 */
+	public String getLastName() {
+		return lastName;
+	}
+
+	/**
+	 * @param lastName the lastName to set
+	 */
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
 	/**
